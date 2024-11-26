@@ -17,6 +17,9 @@
 /.next/
 /out/
 
+#confic and json  files
+.confic
+.json
 # production
 /build
 
