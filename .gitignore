@@ -18,8 +18,8 @@
 /out/
 
 #confic and json  files
-.confic
-.json
+*.confic
+*.json
 # production
 /build
 
