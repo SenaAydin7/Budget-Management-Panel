@@ -1,24 +1,21 @@
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 
-export default function LoginPage() {
+export default function RegisterPage() {
   const router = useRouter();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = () => {
-    const storedUser = JSON.parse(localStorage.getItem('user'));
-    if (storedUser?.username === username && storedUser?.password === password) {
-      localStorage.setItem('isLoggedIn', 'true');
-      router.push('/panel');
-    } else {
-      alert('Geçersiz kullanıcı adı veya şifre!');
-    }
+  const handleRegister = () => {
+    const user = { username, password };
+    localStorage.setItem('user', JSON.stringify(user));
+    alert('Kayıt başarılı!');
+    router.push('/');
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center bg-bordo text-white">
-      <h1 className="text-3xl font-bold mb-4">Giriş Yap</h1>
+    <div className="min-h-screen flex flex-col justify-center items-center bg-kirmizi text-white">
+      <h1 className="text-3xl font-bold mb-4">Kayıt Ol</h1>
       <input
         className="mb-2 p-2 rounded bg-white text-black"
         type="text"
@@ -34,16 +31,10 @@ export default function LoginPage() {
         onChange={(e) => setPassword(e.target.value)}
       />
       <button
-        className="mb-4 bg-kirmizi p-2 rounded"
-        onClick={handleLogin}
-      >
-        Giriş Yap
-      </button>
-      <button
         className="bg-bordo p-2 rounded"
-        onClick={() => router.push('/RegisterForm')}
+        onClick={handleRegister}
       >
-        Yeni Kayıt
+        Kayıt Ol
       </button>
     </div>
   );

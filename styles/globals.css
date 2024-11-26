@@ -1,21 +1,54 @@
+/* Tailwind CSS'in temel stillerini dahil edin */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* Global stiller ve özelleştirmeler */
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', sans-serif; /* veya projenize uygun bir font */
+  background-color: #f7fafc; /* Tailwind'in gray-100'ü */
+  color: #333; /* Varsayılan metin rengi */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Karanlık Mod için başlangıç stilleri */
+.dark {
+  --bg-color: #1a202c; /* Dark background */
+  --text-color: #edf2f7; /* Dark text */
+}
+
+body.dark {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+  border-radius: 0.375rem; /* Tailwind'in rounded-md'ye karşılık gelir */
+}
+
+/* Tailwind ile responsive breakpoints için özelleştirmeler (isteğe bağlı) */
+@media (max-width: 640px) {
+  /* Mobil cihazlar için özel stiller */
+  body {
+    font-size: 14px;
+  }
 }
