@@ -45,6 +45,20 @@ input, select, textarea {
   border-radius: 0.375rem; /* Tailwind'in rounded-md'ye karşılık gelir */
 }
 
+.bg {
+  --tw-bg-opacity: 1;
+  background-color: rgb(149 213 208);
+} 
+
+.bg-button {
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 73 76);
+}
+
+.text-log {
+  color: rgb(30 73 76);
+}
+
 /* Tailwind ile responsive breakpoints için özelleştirmeler (isteğe bağlı) */
 @media (max-width: 640px) {
   /* Mobil cihazlar için özel stiller */

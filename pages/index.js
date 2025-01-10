@@ -17,30 +17,30 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center bg-bordo text-white">
-      <h1 className="text-3xl font-bold mb-4">Giriş Yap</h1>
+    <div className="min-h-screen flex flex-col justify-center items-center bg">
+      <h1 className="text-3xl font-bold mb-4 text-log">Giriş Yap</h1>
       <input
-        className="mb-2 p-2 rounded bg-white text-black"
+        className="mb-2 p-2 rounded bg-white text-black w-full max-w-md"
         type="text"
         placeholder="Kullanıcı Adı"
         value={username}
         onChange={(e) => setUsername(e.target.value)}
       />
       <input
-        className="mb-4 p-2 rounded bg-white text-black"
+        className="mb-4 p-2 rounded bg-white text-black w-full max-w-md"
         type="password"
         placeholder="Şifre"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
       <button
-        className="mb-4 bg-kirmizi p-2 rounded"
+        className="mb-4 bg-button p-2 rounded text-white hover:bg-[#d0e9e4] hover:text-teal-950 w-full max-w-md"
         onClick={handleLogin}
       >
         Giriş Yap
       </button>
       <button
-        className="bg-bordo p-2 rounded"
+        className="bg-button p-2 rounded text-white hover:bg-[#d0e9e4] hover:text-teal-950 w-full max-w-md"
         onClick={() => router.push('/RegisterForm')}
       >
         Yeni Kayıt

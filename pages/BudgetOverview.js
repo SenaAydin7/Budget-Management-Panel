@@ -8,7 +8,7 @@ export default function BudgetOverview({ categories, transactions, budgetLimits 
   
     return (
       <div className="bg-gray-100 p-2 rounded">
-        <h2 className="text-xl font-semibold mb-4 text-[#922B21]">Kategori Durumu</h2>
+        <h2 className="text-xl font-semibold mb-4 text-[#1e494c]">Kategori Durumu</h2>
         <ul>
           {categorySummaries.map(({ category, totalSpent, limit }) => (
             <li key={category} className="mb-2">

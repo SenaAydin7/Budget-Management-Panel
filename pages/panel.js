@@ -44,8 +44,8 @@ export default function PanelPage() {
     datasets: [
       {
         data: getCategoryData.incomeData,
-        backgroundColor: ['#F5B7B1', '#F1948A', '#EC7063', '#E74C3C'],
-        hoverBackgroundColor: ['#D98880', '#CD6155', '#A93226', '#922B21'],
+        backgroundColor: ['#a7ddc3', '#9feadc', '#93c8be', '#76a29a'],
+        hoverBackgroundColor: ['#77aca2', '#599388', '#2d6c61', '#618f84'],
       },
     ],
   }), [getCategoryData]);
@@ -55,29 +55,29 @@ export default function PanelPage() {
     datasets: [
       {
         data: getCategoryData.expenseData,
-        backgroundColor: ['#A52A2A', '#B03A2E', '#CB4335', '#E74C3C'],
-        hoverBackgroundColor: ['#922B21', '#7B241C', '#641E16', '#512E2E'],
+        backgroundColor: ['#a7ddc3', '#9feadc', '#93c8be', '#76a29a'],
+        hoverBackgroundColor: ['#77aca2', '#599388', '#2d6c61', '#618f84'],
       },
     ],
   }), [getCategoryData]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#dbbcbc] to-[#a13f3f] flex justify-center items-center font-inter p-4">
+    <div className="min-h-screen bg-gradient-to-b from-[#bcdbd7] to-[#3fa19a] flex justify-center items-center font-inter p-4">
       <div className="container max-w-5xl bg-white bg-opacity-70  rounded-xl shadow-xl p-6">
-        <h1 className="text-3xl font-bold text-center text-[#800020] mb-6">
+        <h1 className="text-3xl font-bold text-center text-[#1e494c] mb-6">
           Bütçe Yönetimi Paneli
         </h1>
 
         {/* Gelir/Gider Formu */}
-        <div className="bg-[#FDF2F2] shadow-md rounded-lg mb-6">
+        <div className="bg-[#f2fdfd] shadow-md rounded-lg mb-6">
           <TransactionForm onAddTransaction={addTransaction} categories={categories} />
         </div>
 
         {/* Grafikler ve Bütçe Genel Durumu */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Gelir Grafiği */}
-          <div className="flex flex-col items-center bg-[#FDF2F2] rounded-lg shadow-lg p-6">
-            <h2 className="text-lg font-bold text-[#922B21] mb-4">Gelirler</h2>
+          <div className="flex flex-col items-center bg-[#f2fdfd] rounded-lg shadow-lg p-6">
+            <h2 className="text-lg font-bold text-[#1e494c] mb-4">Gelirler</h2>
             <div className="w-64 h-64">
               <Pie
                 data={incomeChartData}
@@ -87,7 +87,7 @@ export default function PanelPage() {
                       display: true,
                       position: 'bottom',
                       labels: {
-                        color: '#922B21',
+                        color: '#1e494c',
                         font: { size: 12 },
                       },
                     },
@@ -100,8 +100,8 @@ export default function PanelPage() {
           </div>
 
           {/* Gider Grafiği */}
-          <div className="flex flex-col items-center bg-[#FDF2F2] rounded-lg shadow-lg p-6">
-            <h2 className="text-lg font-bold text-[#922B21] mb-4">Giderler</h2>
+          <div className="flex flex-col items-center bg-[#f2fdfd] rounded-lg shadow-lg p-6">
+            <h2 className="text-lg font-bold text-[#1e494c] mb-4">Giderler</h2>
             <div className="w-64 h-64">
               <Pie
                 data={expenseChartData}
@@ -111,7 +111,7 @@ export default function PanelPage() {
                       display: true,
                       position: 'bottom',
                       labels: {
-                        color: '#922B21',
+                        color: '#1e494c',
                         font: { size: 12 },
                       },
                     },
